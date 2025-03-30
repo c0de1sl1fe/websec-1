@@ -1,12 +1,12 @@
-
 body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
+    padding: 20px;
 }
 
 .redBorder {
@@ -30,19 +30,26 @@ body {
 
 .input-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 5px;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 input, select {
+    width: 100%;
     max-width: 150px;
     padding: 10px;
     border: 1px solid #aaa;
     border-radius: 10px;
+    box-sizing: border-box;
 }
-input::placeholder  {
-    color:red;
+
+input::placeholder {
+    color: red;
 }
+
 button {
     padding: 10px 20px;
     margin: 10px 0;
@@ -51,6 +58,8 @@ button {
     background-color: white;
     cursor: pointer;
     font-weight: bold;
+    width: 100%;
+    max-width: 200px;
 }
 
 button:hover {
@@ -59,14 +68,11 @@ button:hover {
 }
 
 .results {
-    border: red dashed 2px;
-    color: red;
     margin-top: 10px;
     padding: 10px;
     width: 100%;
     text-align: left;
     background-color: white;
-    border-radius: 10px;
     font-size: 1.2em;
     height: calc(5 * (1.2em + 10px));
     overflow-y: auto;
@@ -78,4 +84,15 @@ button:hover {
 
 .old-result {
     color: rgb(249, 116, 34);
+}
+
+@media (max-width: 480px) {
+    .input-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    input, select {
+        max-width: 100%;
+    }
 }

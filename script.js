@@ -21,7 +21,7 @@ function calculate() {
                 result = num1 * num2;
                 break;
             case "/":
-                if (num2 === 0) {
+                if (Math.abs(num2) < Number.EPSILON) {
                     throw new Error("Ошибка: Деление на ноль!");
                 }
                 result = (num1 / num2).toFixed(2);
